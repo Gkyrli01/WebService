@@ -75,6 +75,18 @@ public class TestPatient {
 
 
 	@Test
+	public void Disease() {
+
+		Disease toFarmakoMastre=new Disease("DoubleIdentity");
+		toFarmakoMastre.insert();
+        assertEquals("PharmakoTest?",Disease.returnDiseaseByName("DoubleIdentity").name,"DoubleIdentity");
+		toFarmakoMastre.delete();
+        assertEquals("PharmakoTestDel?",Pharmako.returnPharmako("DoubleIdentity"),null);
+
+	}
+
+	
+	@Test
 	public void Overrule() {
 		int i;
 		Overrule toFarmakoMastre=new Overrule("kokos",2,"junit",1);
@@ -102,4 +114,8 @@ public class TestPatient {
         assertEquals("After one insertion,biggerList?", Consultations.returnMostRecentConsultationOfPatient(1).perscriptioId,null);
         
 	}
+	
+	
+	
+	
 }
