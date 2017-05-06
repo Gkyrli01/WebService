@@ -8,68 +8,66 @@ import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlType;
 
-@XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "Disease")
-public class Disease {
 
-/*
-CREATE TABLE Diseases(
-DiName nvarchar(50) PRIMARY KEY
-)
-	*/
+@XmlAccessorType(XmlAccessType.FIELD)
+@XmlType(name = "Pharmako")
+public class Pharmako {
+
+	
 	@XmlElement(name="name")
 	public String name;
 	
-
 	
-	public Disease(String name) {
+	public Pharmako(String name) {
 		this.name=name;
 	}
 	
 
 
-public static String select="SELECT * FROM [webService].[dbo].[Diseases]";
-public static String delete="DELETE  FROM [webService].[dbo].[Diseases]";
+public Pharmako() {
+		// TODO Auto-generated constructor stub
+	}
 
-public Disease() {
-	// TODO Auto-generated constructor stub
-}
 
-public static Disease returnDiseaseByName(String username) {
+
+public static String select="SELECT * FROM [webService].[dbo].[pharmako]";
+public static String delete="DELETE  FROM [webService].[dbo].[pharmako]";
+
+public static Pharmako returnPharmako(String username) {
 	username="'"+username+"'";
 	GetConnection ok=new GetConnection();
 	ok.getDBConnection();
 	
-	ResultSet pop=ok.select(select+" WHERE DiName="+username);
+	ResultSet pop=ok.select(select+" WHERE phName="+username);
 	try {
-		return new Disease(pop.getString(1));
+		return new Pharmako(pop.getString(1));
 	} catch (SQLException e) {
 		e.printStackTrace();
 		return null;
 	}
 }
 
-//sxoolio
-public Disease[] returnDiseases() {
+
+public Pharmako[] returnPharmako() {
 	GetConnection ok=new GetConnection();
 	ok.getDBConnection();
 	ResultSet pop=ok.select(select);
-	ArrayList<Disease>arras=new ArrayList<Disease>();
+	ArrayList<Pharmako>arras=new ArrayList<Pharmako>();
 	
 	try {
 		
 		pop.first();
-		arras.add(new Disease(pop.getString(1)));
+		arras.add(new Pharmako(pop.getString(1)));
 		while(pop.next()){
-			arras.add(new Disease(pop.getString(1)));
+			arras.add(new Pharmako(pop.getString(1)));
 		}
 	} catch (SQLException e) {
 		e.printStackTrace();
 		return null;
 	}
-	Disease[] zwa=new Disease[arras.size()];
+	Pharmako[] zwa=new Pharmako[arras.size()];
 	int i=0;
-	for (Disease doctor : arras) {
+	for (Pharmako doctor : arras) {
 		zwa[i]=doctor;
 		i++;
 	}
@@ -111,20 +109,22 @@ public void delete(){
 	String name1="'"+name+"'";
 	GetConnection ok=new GetConnection();
 	ok.getDBConnection();		
-	ok.delete(delete+" WHERE DiName="+name1);
+	ok.delete(delete+" WHERE phName="+name1);
 	
 }
 	
-/*
+	/*
 public static void main(String[] args) {
-	Disease egkasia=new Disease("Psuxas");
-	egkasia.insert();
 	
-	System.out.println(returnSideEffectByName("Psuxas").name);
+	Pharmako toFarmakoMastre=new Pharmako("Panadol");
+	toFarmakoMastre.insert();
 	
-	System.out.println(egkasia.returnPerscription()[0].name);
-	egkasia.delete();
+	System.out.println(returnPharmako("Panadol").name);
+	System.out.println(toFarmakoMastre.returnPharmako()[0].name);
 	
+	toFarmakoMastre.delete();
+
 }
-	*/
+*/
+
 }
