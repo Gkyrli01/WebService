@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<endpoints xmlns="http://java.sun.com/xml/ns/jax-ws/ri/runtime" version="2.0">
+
+     <endpoint
+     name="ClinicalWS"
+     implementation="clinical.AWSClinicalStaffImpl"
+     url-pattern="/ClinicalWS"/>
+     
+     <endpoint
+     name="MedicalWS"
+     implementation="medicalRecord.AWSMedicalRecordImpl"
+     url-pattern="/MedicalWS"/>
+     
+     <endpoint
+     name="HealthManageWS"
+     implementation="healthService.AWSHealthServiceImpl"
+     url-pattern="/HealthManageWS"/>
+     
+     <endpoint
+     name="LoginWS"
+     implementation="login.AWSLoginImpl"
+     url-pattern="/LoginWS"/>
+     
+     <endpoint
+     name="ReceptionWS"
+     implementation="receptionist.AWSReceptionistImpl"
+     url-pattern="/ReceptionWS"/>
+     
+</endpoints> 

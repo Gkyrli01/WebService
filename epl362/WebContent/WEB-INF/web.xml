@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app
+     xmlns="http://java.sun.com/xml/ns/j2ee"
+     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+     xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee
+                         http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd"
+     version="2.4">
+     <display-name>HellooWorldWS</display-name>
+   <listener>
+     <listener-class>
+        com.sun.xml.ws.transport.http.servlet.WSServletContextListener
+     </listener-class>
+   </listener>  
+      
+     <servlet>
+      <servlet-name>ClinicalWS</servlet-name>
+      <servlet-class>
+        com.sun.xml.ws.transport.http.servlet.WSServlet
+      </servlet-class>
+   </servlet>
+   <servlet-mapping>
+     <servlet-name>ClinicalWS</servlet-name>
+     <url-pattern>/ClinicalWS</url-pattern>
+   </servlet-mapping>
+   
+    <servlet>
+      <servlet-name>MedicalWS</servlet-name>
+      <servlet-class>
+        com.sun.xml.ws.transport.http.servlet.WSServlet
+      </servlet-class>
+   </servlet>
+   <servlet-mapping>
+     <servlet-name>MedicalWS</servlet-name>
+     <url-pattern>/MedicalWS</url-pattern>
+   </servlet-mapping>
+   
+   
+      <servlet>
+      <servlet-name>HealthManageWS</servlet-name>
+      <servlet-class>
+        com.sun.xml.ws.transport.http.servlet.WSServlet
+      </servlet-class>
+   </servlet>
+   <servlet-mapping>
+     <servlet-name>HealthManageWS</servlet-name>
+     <url-pattern>/HealthManageWS</url-pattern>
+   </servlet-mapping>
+   
+   
+      <servlet>
+      <servlet-name>LoginWS</servlet-name>
+      <servlet-class>
+        com.sun.xml.ws.transport.http.servlet.WSServlet
+      </servlet-class>
+   </servlet>
+   <servlet-mapping>
+     <servlet-name>LoginWS</servlet-name>
+     <url-pattern>/LoginWS</url-pattern>
+   </servlet-mapping>
+   
+   
+      <servlet>
+      <servlet-name>ReceptionWS</servlet-name>
+      <servlet-class>
+        com.sun.xml.ws.transport.http.servlet.WSServlet
+      </servlet-class>
+   </servlet>
+   <servlet-mapping>
+     <servlet-name>ReceptionWS</servlet-name>
+     <url-pattern>/ReceptionWS</url-pattern>
+   </servlet-mapping>
+   
+   
+   
+</web-app>
