@@ -116,6 +116,17 @@ public class TestPatient {
 	}
 	
 	
-	
+/*
+	@Test
+	public void Perscription() {
+		Perscription ok=new Perscription(3, "2010-10-11 00:09:13", "2010-11-11 00:11:12", 1);
+		ok.insert();
+		//ok.update();
+		//ok.delete();
+		System.out.println(ok.returnPerscription()[0].startDate);
+		System.out.println(ok.returnPerscription()[0].patient.Description);	
+        
+	}
+	*/
 	
 }
