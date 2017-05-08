@@ -49,7 +49,7 @@ public static Disease returnDiseaseByName(String username) {
 	}
 }
 
-//sxoolio
+
 public Disease[] returnDiseases() {
 	GetConnection ok=new GetConnection();
 	ok.getDBConnection();

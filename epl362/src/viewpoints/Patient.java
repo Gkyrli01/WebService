@@ -178,7 +178,7 @@ public static boolean returnPatientAllergy(int patientId,String pharmako)
 		try {
 			pop.updateString(1, name);
 			pop.updateString(2, adress);
-			pop.updateInt(3, 0);
+			pop.updateInt(3, booleanToInt(dead));
 			pop.updateString(4, Description);
 			pop.updateInt(5, booleanToInt(Selfharm));
 			if(doctor!=null)

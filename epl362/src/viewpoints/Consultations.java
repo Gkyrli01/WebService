@@ -71,6 +71,7 @@ public Consultations(int patient,int doctorId,String theDate,int attend,int drop
 	date=theDate;
 	attended=attend;
 	dropin=drop;
+	this.updated=update;
 	this.perscriptioId=Perscription.returnPerscriptionById(perId);
 	this.clinic=Clinic.returnClinicByName(clinic);
 	consultationId=id;
