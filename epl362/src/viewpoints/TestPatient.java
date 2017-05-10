@@ -34,8 +34,10 @@ public class TestPatient {
 		kokos.insert();
 		System.out.println(i);
         assertEquals("After one insertion,biggerList?", i+1,kokos.returnPatients().length);
+        kokos.id=kokos.returnPatients()[kokos.returnPatients().length-1].id;
+        kokos.delete();
 	}
-
+	
 	@Test
 	public void testInsertsAndUpdatesDelete() {
 		DoctorC ola=new DoctorC();
@@ -89,7 +91,7 @@ public class TestPatient {
 	@Test
 	public void Overrule() {
 		int i;
-		Overrule toFarmakoMastre=new Overrule("kokos",2,"junit",1);
+		Overrule toFarmakoMastre=new Overrule("kokos",1002,"junit",1);
 		if(toFarmakoMastre.returnOverrule()==null)
 			i=0;
 		else 
@@ -106,27 +108,45 @@ public class TestPatient {
 	        assertEquals("OveruleDelete?",i,toFarmakoMastre.returnOverrule().length);
         
 	}
-
+	
 	
 	@Test
 	public void ConsultationDbUsage() {
-        assertEquals("After one insertion,biggerList?", Consultations.returnConsultationsById(1).clinic.name,"312");
-        assertEquals("After one insertion,biggerList?", Consultations.returnMostRecentConsultationOfPatient(1).perscriptioId,null);
-        
+        assertEquals("After one insertion,biggerList?", Consultations.returnConsultationsById(1003).clinic.name,"Trooditissa");
+        assertEquals("After one insertion,biggerList?", Consultations.returnMostRecentConsultationOfPatient(1002).perscriptioId.id,1019);
 	}
 	
 	
-/*
+	
+	@Test
+	public void Sideeffect(){
+		SideEffect disease=new SideEffect("Flwritida");
+		disease.insert();
+        assertEquals("Can i find the disease?", disease.returnSideEffectByName(disease.name).name,"Flwritida");
+        
+		disease.delete();
+        assertEquals("Can i find the disease?", disease.returnSideEffectByName(disease.name),null);
+        
+	}
 	@Test
 	public void Perscription() {
-		Perscription ok=new Perscription(3, "2010-10-11 00:09:13", "2010-11-11 00:11:12", 1);
+		Perscription ok=new Perscription(1002, "2010-10-11 00:09:13", "2010-11-11 00:11:12", 1);
 		ok.insert();
-		//ok.update();
-		//ok.delete();
-		System.out.println(ok.returnPerscription()[0].startDate);
-		System.out.println(ok.returnPerscription()[0].patient.Description);	
+        assertEquals("Date is same?",ok.returnPerscriptionById(ok.returnPerscription()[ok.returnPerscription().length-1].id).patient.id,1002);
+        ok.id=ok.returnPerscriptionById(ok.returnPerscription()[ok.returnPerscription().length-1].id).id;
+        ok.delete();
         
 	}
-	*/
+	
+	@Test
+	public void TestAllergy(){
+	
+        assertEquals("Date is same?",Patient.returnPatientAllergy(1002, "Celexa"),true);
+        assertEquals("Date is same?",Patient.returnPatientAllergy(1002, "Paxil"),false);
+        assertEquals("Date is same?",Patient.returnPatientAllergy(1002, "Luvox"),false);
+        assertEquals("Date is same?",Patient.returnPatientAllergy(1002, "Zoloft"),true);
+        assertEquals("Date is same?",Patient.returnPatientAllergy(1002, "Prozac"),true);
+	}
+	
 	
 }
