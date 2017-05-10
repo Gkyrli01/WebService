@@ -33,7 +33,11 @@ public SideEffect() {
 
 public static String select="SELECT * FROM [webService].[dbo].[SideEffects]";
 public static String delete="DELETE  FROM [webService].[dbo].[SideEffects]";
-
+/**
+ * Returns a side effect by name.
+ * @param username
+ * @return
+ */
 public static SideEffect returnSideEffectByName(String username) {
 	username="'"+username+"'";
 	GetConnection ok=new GetConnection();
@@ -48,7 +52,10 @@ public static SideEffect returnSideEffectByName(String username) {
 	}
 }
 
-
+/**
+ * Returns all side effects available in db.
+ * @return
+ */
 public SideEffect[] returnSideEffect() {
 	GetConnection ok=new GetConnection();
 	ok.getDBConnection();
@@ -88,7 +95,10 @@ public int checkNull(Object what) {
 	return 0;
 }
 
-
+/**
+ * Inserts a new sideeffect.
+ * @return
+ */
 public boolean insert(){
 	GetConnection ok=new GetConnection();
 	ok.getDBConnection();
@@ -105,7 +115,9 @@ public boolean insert(){
 	}
 	//return "INSERT INTO Doctor VALUES ('"+doctorName+"')";
 }
-
+/**
+ * Delete a new sideeffect.
+ */
 public void delete(){	
 	String name1="'"+name+"'";
 	GetConnection ok=new GetConnection();

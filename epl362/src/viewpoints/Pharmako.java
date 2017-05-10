@@ -32,7 +32,11 @@ public Pharmako() {
 
 public static String select="SELECT * FROM [webService].[dbo].[pharmako]";
 public static String delete="DELETE  FROM [webService].[dbo].[pharmako]";
-
+/**
+ * Returns a pharmako by name.
+ * @param username
+ * @return
+ */
 public static Pharmako returnPharmako(String username) {
 	username="'"+username+"'";
 	GetConnection ok=new GetConnection();
@@ -47,7 +51,10 @@ public static Pharmako returnPharmako(String username) {
 	}
 }
 
-
+/**
+ * Returns all medicines.
+ * @return
+ */
 public Pharmako[] returnPharmako() {
 	GetConnection ok=new GetConnection();
 	ok.getDBConnection();
@@ -87,7 +94,10 @@ public int checkNull(Object what) {
 	return 0;
 }
 
-
+/**
+ * Inserts a pharmako
+ * @return
+ */
 public boolean insert(){
 	GetConnection ok=new GetConnection();
 	ok.getDBConnection();

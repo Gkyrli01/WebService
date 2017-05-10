@@ -12,7 +12,12 @@ import java.util.Locale;
 
 public class HealthReport {
 
-
+/**
+ * Creates the report for health reports.
+ * @param startD
+ * @param endD
+ * @return
+ */
 	public static String returnReport(String startD,String endD)
 	{
 		String toRet="";

@@ -50,7 +50,11 @@ public Perscription(int patientId,String dates,String dateE,int id) {
 
 public static String select="SELECT * FROM [webService].[dbo].[perscription]";
 public static String delete="DELETE  FROM [webService].[dbo].[perscription]";
-
+/**
+ * Return a prescription by the id given.
+ * @param id
+ * @return
+ */
 public static Perscription returnPerscriptionById(int id) {
 	GetConnection ok=new GetConnection();
 	ok.getDBConnection();
@@ -64,7 +68,10 @@ public static Perscription returnPerscriptionById(int id) {
 	}
 }
 
-
+/**
+ * Returns all the prescription.
+ * @return
+ */
 public Perscription[] returnPerscription() {
 	GetConnection ok=new GetConnection();
 	ok.getDBConnection();
@@ -106,7 +113,10 @@ public int checkNull(Object what) {
 }
 
 
-
+/**
+ * Inserts a prescription.
+ * @return
+ */
 public boolean insert(){
 	
 	java.sql.Timestamp kk = new java.sql.Timestamp(java.sql.Timestamp.valueOf(startDate).getTime());

@@ -34,7 +34,11 @@ public static String delete="DELETE  FROM [webService].[dbo].[Diseases]";
 public Disease() {
 	// TODO Auto-generated constructor stub
 }
-
+/**
+ * Returns a disease by the name given.
+ * @param username
+ * @return
+ */
 public static Disease returnDiseaseByName(String username) {
 	username="'"+username+"'";
 	GetConnection ok=new GetConnection();
@@ -49,7 +53,10 @@ public static Disease returnDiseaseByName(String username) {
 	}
 }
 
-
+/**
+ * Returns all diseases in db.
+ * @return
+ */
 public Disease[] returnDiseases() {
 	GetConnection ok=new GetConnection();
 	ok.getDBConnection();
@@ -89,7 +96,10 @@ public int checkNull(Object what) {
 	return 0;
 }
 
-
+/**
+ * Inserts a disease
+ * @return
+ */
 public boolean insert(){
 	GetConnection ok=new GetConnection();
 	ok.getDBConnection();
@@ -106,7 +116,9 @@ public boolean insert(){
 	}
 	//return "INSERT INTO Doctor VALUES ('"+doctorName+"')";
 }
-
+/**
+ * Deletes a disease
+ */
 public void delete(){	
 	String name1="'"+name+"'";
 	GetConnection ok=new GetConnection();

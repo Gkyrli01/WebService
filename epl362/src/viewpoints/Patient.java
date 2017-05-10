@@ -46,7 +46,11 @@ public class Patient {
 	public Patient(){
 		
 	}
-	
+	/**
+	 * Returns a patient by the id given.
+	 * @param id
+	 * @return
+	 */
 	public static Patient returnPatientById(int id) {
 		GetConnection ok=new GetConnection();
 		ok.getDBConnection();
@@ -78,7 +82,12 @@ public class Patient {
 	
 	
 
-
+/**
+ * Return whether the patient with the Id has a sideeffect that pharmako also has.
+ * @param patientId
+ * @param pharmako
+ * @return
+ */
 public static boolean returnPatientAllergy(int patientId,String pharmako)
 {
 	ArrayList<PercriptionDetails>arras=new ArrayList<PercriptionDetails>();
@@ -105,7 +114,10 @@ public static boolean returnPatientAllergy(int patientId,String pharmako)
 	
 	//SideEffect
 	
-	
+	/**
+	 * Returns all patients
+	 * @return
+	 */
 	public Patient[] returnPatients() {
 		GetConnection ok=new GetConnection();
 		ok.getDBConnection();
@@ -143,6 +155,10 @@ public static boolean returnPatientAllergy(int patientId,String pharmako)
 		}
 		return 0;
 	}
+	/**
+	 * Inserts all patients.
+	 * @return
+	 */
 	public boolean insert(){
 		
 		GetConnection ok=new GetConnection();
@@ -169,7 +185,10 @@ public static boolean returnPatientAllergy(int patientId,String pharmako)
 		}
 		//return "INSERT INTO Doctor VALUES ('"+doctorName+"')";
 	}
-	
+	/**
+	 * Updates a patient
+	 * @return
+	 */
 	public boolean update(){
 		GetConnection ok=new GetConnection();
 		ok.getDBConnection();
@@ -193,6 +212,9 @@ public static boolean returnPatientAllergy(int patientId,String pharmako)
 			return false;
 		}
 	}
+	/**
+	 * Delete a patient.
+	 */
 	public void delete(){		
 		GetConnection ok=new GetConnection();
 		ok.getDBConnection();		

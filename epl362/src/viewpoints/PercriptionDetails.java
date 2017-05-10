@@ -47,6 +47,12 @@ public PercriptionDetails(String pharmako,int pescriptionId,int quantity) {
 public static String select="SELECT * FROM [webService].[dbo].[PercriptionDetails]";
 public static String delete="DELETE  FROM [webService].[dbo].[PercriptionDetails]";
 
+/**
+ * Shouldn't be used
+ * @param perscriptionId
+ * @param pharmakoName
+ * @return
+ */
 public static PercriptionDetails returnPercriptionDetailsById(int perscriptionId,String pharmakoName) {
 	GetConnection ok=new GetConnection();
 	ok.getDBConnection();
@@ -61,7 +67,11 @@ public static PercriptionDetails returnPercriptionDetailsById(int perscriptionId
 }
 
 
-
+/**
+ * Returns the last prescription of a patient.
+ * @param patientId
+ * @return
+ */
 public static PercriptionDetails[] returnLastPerscriptionDetailsByPId(int patientId)
 {
 	ArrayList<PercriptionDetails>arras=new ArrayList<PercriptionDetails>();
@@ -84,7 +94,11 @@ public static PercriptionDetails[] returnLastPerscriptionDetailsByPId(int patien
 }
 
 
-
+/**
+ * Returns prescription details by the id of the prescription.
+ * @param perscriptionId
+ * @return
+ */
 public PercriptionDetails[] returnPercriptionDetails(int perscriptionId ) {
 	GetConnection ok=new GetConnection();
 	ok.getDBConnection();
@@ -155,7 +169,10 @@ public int checkNull(Object what) {
 }
 
 
-
+/**
+ * Inserts a prescription detail.
+ * @return
+ */
 public boolean insert(){
 	
 	GetConnection ok=new GetConnection();

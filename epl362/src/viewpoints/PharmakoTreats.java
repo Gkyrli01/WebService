@@ -39,6 +39,12 @@ DiName nvarchar(50) NOT NULL
 	public PharmakoTreats() {
 		// TODO Auto-generated constructor stub
 	}
+	/**
+	 * Shouldn't be used
+	 * @param DiseaseName
+	 * @param pharmakoName
+	 * @return
+	 */
 	public static PharmakoTreats returnPharmakoTreatsById(String DiseaseName ,String pharmakoName) {
 		GetConnection ok=new GetConnection();
 		ok.getDBConnection();
@@ -51,7 +57,11 @@ DiName nvarchar(50) NOT NULL
 		}
 	}
 
-
+	/**
+	 * Returns drug capabilities.
+	 * @param name
+	 * @return
+	 */
 	public static PharmakoTreats[] returnPharmakoTreatsByDrugName(String name) {
 		GetConnection ok=new GetConnection();
 		ok.getDBConnection();
@@ -122,7 +132,10 @@ DiName nvarchar(50) NOT NULL
 	}
 
 
-
+	/**
+	 * Insert a pharmako that treats.
+	 * @return
+	 */
 	public boolean insert(){
 		
 		GetConnection ok=new GetConnection();
@@ -142,6 +155,9 @@ DiName nvarchar(50) NOT NULL
 		//return "INSERT INTO Doctor VALUES ('"+doctorName+"')";
 	}
 
+	/**
+	 * Deletes a pharmako that treat.
+	 */
 	public void delete(){		
 		GetConnection ok=new GetConnection();
 		ok.getDBConnection();		

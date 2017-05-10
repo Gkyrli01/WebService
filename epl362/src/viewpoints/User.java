@@ -32,7 +32,12 @@ UserType smallint NOT NUll
 	public static String delete="DELETE  FROM [webService].[dbo].[Users]";
 	
 	
-	
+	/**
+	 * Checks the user credentials.
+	 * @param username
+	 * @param password
+	 * @return
+	 */
 	public static int Login(String username,String password){
 		username="'"+username+"'";
 		password="'"+password+"'";
@@ -49,7 +54,10 @@ UserType smallint NOT NUll
 		}
 	}
 
-
+/**
+ * Inserts a user.
+ * @return
+ */
 	public boolean insert(){
 		GetConnection ok=new GetConnection();
 		ok.getDBConnection();
@@ -68,6 +76,11 @@ UserType smallint NOT NUll
 		}
 		//return "INSERT INTO Doctor VALUES ('"+doctorName+"')";
 	}
+	/**
+	 * Updates a users password.
+	 * @param newPass
+	 * @return
+	 */
 	public boolean update(String newPass){
 		String name1="'"+username+"'";
 		String pass="'"+password+"'";

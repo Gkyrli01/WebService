@@ -40,6 +40,11 @@ phoneNumber int
 public static String select="SELECT * FROM [webService].[dbo].[Clinic]";
 public static String delete="DELETE  FROM [webService].[dbo].[Clinic]";
 
+/**
+ * Returns a clinic by the name given.
+ * @param username
+ * @return a clinic
+ */
 public static Clinic returnClinicByName(String username) {
 	username="'"+username+"'";
 	GetConnection ok=new GetConnection();
@@ -57,6 +62,11 @@ public Clinic() {
 	// TODO Auto-generated constructor stub
 }
 
+
+/**
+ * Returns all clinics.
+ * @return an array of clinics
+ */
 public Clinic[] returnClinics() {
 	GetConnection ok=new GetConnection();
 	ok.getDBConnection();
@@ -98,7 +108,10 @@ public int checkNull(Object what) {
 }
 
 
-
+/**
+ * Inserst a clinic
+ * @return true if success,false on fail.
+ */
 public boolean insert(){
 	GetConnection ok=new GetConnection();
 	ok.getDBConnection();
@@ -118,6 +131,10 @@ public boolean insert(){
 	//return "INSERT INTO Doctor VALUES ('"+doctorName+"')";
 }
 
+/**
+ * Updates a clinic
+ * @return
+ */
 public boolean update(){
 	String name1="'"+name+"'";
 	GetConnection ok=new GetConnection();
@@ -134,6 +151,9 @@ public boolean update(){
 		return false;
 	}
 }
+/**
+ * Deletes the clinic.
+ */
 public void delete(){	
 	String name1="'"+name+"'";
 	GetConnection ok=new GetConnection();

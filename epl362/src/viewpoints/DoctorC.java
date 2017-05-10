@@ -33,6 +33,10 @@ public class DoctorC {
 		this.id=id;
 	}
 	
+	/**
+	 * Returns all doctors
+	 * @return
+	 */
 	public DoctorC[] returnDoctors() {
 		GetConnection ok=new GetConnection();
 		ok.getDBConnection();
@@ -57,7 +61,11 @@ public class DoctorC {
 		}
 		return zwa;
 	}
-	
+	/**
+	 * Return a doctor by id given
+	 * @param id
+	 * @return
+	 */
 	public static DoctorC returnDoctorById(int id) {
 		GetConnection ok=new GetConnection();
 		ok.getDBConnection();
@@ -71,7 +79,10 @@ public class DoctorC {
 		}
 		return null;
 	}
-	
+	/**
+	 * Inserts a new doctor
+	 * @return
+	 */
 	public boolean insert(){
 		
 		GetConnection ok=new GetConnection();
@@ -106,7 +117,9 @@ public class DoctorC {
 			return false;
 		}
 	}
-	
+	/**
+	 * Deletes a doctor
+	 */
 	public void delete(){		
 		GetConnection ok=new GetConnection();
 		ok.getDBConnection();		

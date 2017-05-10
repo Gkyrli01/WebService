@@ -40,6 +40,12 @@ SideEffectName nvarchar(50) NOT NULL
 	public static String select="SELECT * FROM [webService].[dbo].[pharmakoSideEffects]";
 	public static String delete="DELETE  FROM [webService].[dbo].[pharmakoSideEffects]";
 
+	/**
+	 * Shouldn't be used.
+	 * @param sideEffectName
+	 * @param pharmakoName
+	 * @return
+	 */
 	public static PharmakoSideEffects returnPharmakoSideEffectsById(String sideEffectName ,String pharmakoName) {
 		GetConnection ok=new GetConnection();
 		ok.getDBConnection();
@@ -52,7 +58,11 @@ SideEffectName nvarchar(50) NOT NULL
 		}
 	}
 	
-	
+	/**
+	 * Returns the sideeffects of a pharmako.
+	 * @param name
+	 * @return
+	 */
 	public static PharmakoSideEffects[] returnPharmakoSideEffectsbyName(String name) {
 		name="'"+name+"'";
 		GetConnection ok=new GetConnection();
@@ -122,7 +132,11 @@ SideEffectName nvarchar(50) NOT NULL
 		}
 		return 0;
 	}
-
+	
+	/**
+	 * Inserts a sideeffect for a drug
+	 * @return
+	 */
 	public boolean insert(){
 		
 		GetConnection ok=new GetConnection();
@@ -141,7 +155,9 @@ SideEffectName nvarchar(50) NOT NULL
 		}
 		//return "INSERT INTO Doctor VALUES ('"+doctorName+"')";
 	}
-
+	/**
+	 * Deletes a sideffect of a drug.
+	 */
 	public void delete(){		
 		GetConnection ok=new GetConnection();
 		ok.getDBConnection();		

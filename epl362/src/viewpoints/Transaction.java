@@ -42,7 +42,10 @@ public Transaction() {
 public static String select="SELECT * FROM [webService].[dbo].[atransaction]";
 public static String delete="DELETE  FROM [webService].[dbo].[atransaction]";
 
-
+/**
+ * Returns all transactions.
+ * @return
+ */
 public Transaction[] returnTransaction() {
 	GetConnection ok=new GetConnection();
 	ok.getDBConnection();
@@ -70,7 +73,10 @@ public Transaction[] returnTransaction() {
 	return zwa;
 }
 
-
+/**
+ * Inserts a new transaction.
+ * @return
+ */
 public boolean insert(){
 	GetConnection ok=new GetConnection();
 	ok.getDBConnection();
@@ -87,7 +93,9 @@ public boolean insert(){
 		return false;
 	}
 }
-
+/**
+ * Deletes a transaction.
+ */
 public void delete(){		
 	GetConnection ok=new GetConnection();
 	ok.getDBConnection();		

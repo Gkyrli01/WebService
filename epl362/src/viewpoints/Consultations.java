@@ -78,6 +78,10 @@ public Consultations(int patient,int doctorId,String theDate,int attend,int drop
 	//per
 }
 
+/**
+ * Returns all the consultations.
+ * @return
+ */
 public Consultations[] returnConsultations() {
 	GetConnection ok=new GetConnection();
 	ok.getDBConnection();
@@ -102,7 +106,11 @@ public Consultations[] returnConsultations() {
 	}
 	return zwa;
 }
-
+/**
+ * Returns a consultation based on the id given
+ * @param id
+ * @return
+ */
 public static Consultations returnConsultationsById(int id) {
 	GetConnection ok=new GetConnection();
 	ok.getDBConnection();
@@ -117,7 +125,11 @@ public static Consultations returnConsultationsById(int id) {
 	return null;
 }
 
-
+/**
+ * Return most recent Consultation of patient.
+ * @param patientId
+ * @return
+ */
 public static Consultations returnMostRecentConsultationOfPatient(int patientId)
 {
 	GetConnection ole=new GetConnection();
@@ -143,7 +155,12 @@ public static Consultations returnMostRecentConsultationOfPatient(int patientId)
 }
 //[AttentedNotUpdated]
 
-
+/**
+ * Returns attended and not updated consultations between two dates.
+ * @param startD
+ * @param endD
+ * @return
+ */
 public static Consultations[] returnAttentedNotUpdatedConsultations(String startD,String endD)
 {
 	ArrayList<Consultations>arras=new ArrayList<Consultations>();
@@ -177,6 +194,12 @@ public static Consultations[] returnAttentedNotUpdatedConsultations(String start
 	
 }
 
+/**
+ * Returns not attended patients between two dates.
+ * @param startD
+ * @param endD
+ * @return
+ */
 public static Patient[] returnNotAttentedPatients(String startD,String endD)
 {
 	ArrayList<Patient>arras=new ArrayList<Patient>();
@@ -209,7 +232,10 @@ public static Patient[] returnNotAttentedPatients(String startD,String endD)
 	}
 	
 }
-
+/**
+ * Inserts a consultation.
+ * @return
+ */
 public boolean insert(){
 
 	java.sql.Timestamp kk = new java.sql.Timestamp(java.sql.Timestamp.valueOf(date).getTime());
@@ -239,7 +265,10 @@ public boolean insert(){
 	}
 	//return "INSERT INTO Doctor VALUES ('"+doctorName+"')";
 }
-
+/**
+ * Updates a consultation.
+ * @return
+ */
 public boolean update(){
 	java.sql.Timestamp kk = new java.sql.Timestamp(java.sql.Timestamp.valueOf(date).getTime());
 
@@ -268,7 +297,9 @@ public boolean update(){
 		return false;
 	}
 }
-
+/**
+ * deletes a consultation.
+ */
 public void delete(){		
 	GetConnection ok=new GetConnection();
 	ok.getDBConnection();		

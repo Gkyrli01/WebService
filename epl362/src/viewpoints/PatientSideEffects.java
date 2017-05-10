@@ -27,6 +27,12 @@ public class PatientSideEffects {
 	public static String select="SELECT * FROM [webService].[dbo].[PatientSideEffects]";
 	public static String delete="DELETE  FROM [webService].[dbo].[PatientSideEffects]";
 
+	/**
+	 * Shouldn't be used.
+	 * @param sideEffectName
+	 * @param patientId
+	 * @return
+	 */
 	public static PatientSideEffects returnPatientSideEffectsById(String sideEffectName ,int patientId) {
 		GetConnection ok=new GetConnection();
 		ok.getDBConnection();
@@ -38,7 +44,11 @@ public class PatientSideEffects {
 			return null;
 		}
 	}
-
+	/**
+	 * Returns a patient's side effects.
+	 * @param id
+	 * @return
+	 */
 	public static PatientSideEffects[] returnPatientSideEffectsByPatient(int id) {
 		GetConnection ok=new GetConnection();
 		ok.getDBConnection();
@@ -65,7 +75,10 @@ public class PatientSideEffects {
 	}
 
 	
-	
+	/**
+	 * Returns all patients sideeffects.
+	 * @return
+	 */
 	public PatientSideEffects[] returnPatientSideEffects() {
 		GetConnection ok=new GetConnection();
 		ok.getDBConnection();
@@ -97,13 +110,17 @@ public class PatientSideEffects {
 		}
 		return 0;
 	}
+	
 	public int checkNull(Object what) {
 		if(what==null){
 			return -1;
 		}
 		return 0;
 	}
-
+	/**
+	 * Inserts a patient sideeffect.
+	 * @return
+	 */
 	public boolean insert(){
 		
 		GetConnection ok=new GetConnection();

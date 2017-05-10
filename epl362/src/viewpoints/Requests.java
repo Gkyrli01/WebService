@@ -45,11 +45,14 @@ id int IDENTITY(1,1) PRIMARY KEY
 	public static String select="SELECT * FROM [webService].[dbo].[request]";
 	public static String delete="DELETE  FROM [webService].[dbo].[request]";
 
-
+	/**
+	 * Returns all the requests made that are still pending.
+	 * @return
+	 */
 	public Requests[] returnRequests() {
 		GetConnection ok=new GetConnection();
 		ok.getDBConnection();
-		ResultSet pop=ok.select(select);
+		ResultSet pop=ok.select(select +" WHERE status=0");
 		ArrayList<Requests>arras=new ArrayList<Requests>();
 		
 		try {
@@ -73,7 +76,10 @@ id int IDENTITY(1,1) PRIMARY KEY
 		return zwa;
 	}
 	
-	
+	/**
+	 * Inserts a request.
+	 * @return
+	 */
 	public boolean insert(){
 		GetConnection ok=new GetConnection();
 		ok.getDBConnection();
@@ -92,7 +98,10 @@ id int IDENTITY(1,1) PRIMARY KEY
 		}
 	}
 
-
+/**
+ * Update requests.
+ * @return
+ */
 public boolean update(){
 
 	GetConnection ok=new GetConnection();
@@ -109,7 +118,9 @@ public boolean update(){
 		return false;
 	}
 }
-	
+	/**
+	 * Delete a request.
+	 */
 	public void delete(){		
 		GetConnection ok=new GetConnection();
 		ok.getDBConnection();		

@@ -46,7 +46,10 @@ id int IDENTITY(1,1) PRIMARY KEY
 public static String select="SELECT * FROM [webService].[dbo].[Overrule]";
 public static String delete="DELETE  FROM [webService].[dbo].[Overrule]";
 
-
+/**
+ * Returns all overrules
+ * @return
+ */
 public Overrule[] returnOverrule() {
 	GetConnection ok=new GetConnection();
 	ok.getDBConnection();
@@ -88,7 +91,10 @@ public int checkNull(Object what) {
 }
 
 
-
+/**
+ * Inserts an overrule.
+ * @return
+ */
 public boolean insert(){
 	GetConnection ok=new GetConnection();
 	ok.getDBConnection();
@@ -109,6 +115,10 @@ public boolean insert(){
 	}
 }
 
+/**
+ * Delets an overrule.
+ * @return
+ */
 public void delete(){		
 	GetConnection ok=new GetConnection();
 	ok.getDBConnection();		

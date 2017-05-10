@@ -41,6 +41,11 @@ incidentId int IDENTITY(1,1) PRIMARY KEY
 public static String select="SELECT * FROM [webService].[dbo].[SelfHarmIncident]";
 public static String delete="DELETE  FROM [webService].[dbo].[SelfHarmIncident]";
 
+/**
+ * Returns an incident by its id.
+ * @param id
+ * @return
+ */
 public static SelfHarmIncident returnSelfHarmIncidentById(int id) {
 	GetConnection ok=new GetConnection();
 	ok.getDBConnection();
@@ -54,7 +59,11 @@ public static SelfHarmIncident returnSelfHarmIncidentById(int id) {
 	}
 }
 
-
+/**
+ * return incidents of a patient.
+ * @param id
+ * @return
+ */
 public SelfHarmIncident[] returnSelfHarmIncidentByPatientId(int id) {
 	GetConnection ok=new GetConnection();
 	ok.getDBConnection();
@@ -83,7 +92,10 @@ public SelfHarmIncident[] returnSelfHarmIncidentByPatientId(int id) {
 }
 
 
-
+/**
+ * Return all patient self harm incidents.
+ * @return
+ */
 public SelfHarmIncident[] returnSelfHarmIncident() {
 	GetConnection ok=new GetConnection();
 	ok.getDBConnection();
@@ -125,7 +137,10 @@ public int checkNull(Object what) {
 }
 
 
-
+/**
+ * Inserts a self harn incident.
+ * @return
+ */
 public boolean insert(){
 
 	GetConnection ok=new GetConnection();
@@ -146,7 +161,10 @@ public boolean insert(){
 	}
 	//return "INSERT INTO Doctor VALUES ('"+doctorName+"')";
 }
-
+/**
+ * Update self harm incident.
+ * @return
+ */
 public boolean update(){
 
 	GetConnection ok=new GetConnection();
@@ -163,7 +181,9 @@ public boolean update(){
 		return false;
 	}
 }
-
+/**
+ * Delete a self harm incident. 
+ */
 public void delete(){		
 	GetConnection ok=new GetConnection();
 	ok.getDBConnection();		
