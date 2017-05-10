@@ -94,4 +94,6 @@ public interface AWSClinicalStaff {
 	public Perscription[] returnPerscriptions();
 	@WebMethod
 	public void deletePatientSideEffects(PatientSideEffects toUse, String newParam);
+	@WebMethod
+	public PercriptionDetails[] returnLastPerscriptionDetailsByPrescriptionId(int preId);
 }

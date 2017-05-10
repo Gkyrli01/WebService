@@ -179,4 +179,8 @@ public class AWSClinicalStaffImpl implements AWSClinicalStaff {
 		insertTransaction(new Transaction(newParam, "Deleting patientSideEffect,PatientId: "+toUse.patient.id, 0));
 		toUse.delete();
 	}
+
+	public PercriptionDetails[] returnLastPerscriptionDetailsByPrescriptionId(int preId) {
+		return	new PercriptionDetails().returnPercriptionDetails(preId);
+	}
 }
