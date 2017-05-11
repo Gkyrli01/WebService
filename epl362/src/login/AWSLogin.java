@@ -10,6 +10,13 @@ import viewpoints.User;
 
 @WebService
 public interface AWSLogin {
+	
+	/**
+	 * Return if the credentials were correct
+	 * @param username
+	 * @param password
+	 * @return
+	 */
 	@WebMethod
 	public int Login(String username,String password);
 	@WebMethod

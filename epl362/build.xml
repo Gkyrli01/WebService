@@ -93,7 +93,6 @@
                 <include name="TEST-*.xml"/>
             </fileset>
             <report format="frames" todir="${junit.output.dir}"/>
-        </junitreport>  
-    	
+        </junitreport>
     </target>
 </project>

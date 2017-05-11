@@ -23,13 +23,20 @@ import viewpoints.Pharmako;
 @WebService
 public interface AWSHealthService {
 
-	
+	/**
+	 * Returns all the prescriptions.
+	 * @return
+	 */
 	@WebMethod
 	public Perscription[] returnPrescritpions();
 	@WebMethod
 	public Pharmako[] returnPharmaka();
 	@WebMethod
 	public Disease[] returnDiseases();
+	/**
+	 * Returns the report.
+	 * @return
+	 */
 	@WebMethod
 	public String returnReport();
 	
