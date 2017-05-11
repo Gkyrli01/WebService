@@ -1,0 +1,11 @@
+clinical
+clinical.jaxws
+healthService
+healthService.jaxws
+login
+login.jaxws
+medicalRecord
+medicalRecord.jaxws
+receptionist
+receptionist.jaxws
+viewpoints
